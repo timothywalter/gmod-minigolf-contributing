@@ -1,0 +1,8 @@
+"AddonInfo"
+{
+	"name"		"MiniGolf Map Debugger"
+	"version"	"1.0"
+	"author_name"	"Timothy Walter Lutt"
+	"author_email"	""
+	"info"		"Use this for testing your minigolf holes!"
+}
