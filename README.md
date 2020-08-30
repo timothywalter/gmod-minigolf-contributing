@@ -7,7 +7,7 @@ This is not the whole MiniGolf gamemode, but rather a minimal testing addon mapp
 
 ## Usage Instructions
 
-1. [Download all the files in this repository](archive/master.zip)
+1. Download all the files in this repository
 2. Create a folder in your `garrysmod/addons` folder, name it something like `minigolf-map-debug`
 3. Extract all the files into it, ensuring that the `addon.txt` file and `lua` folder are directly located in `garrysmod/addons/minigolf-map-debug`.
 4. Restart Garry's Mod if it was opened (required)
