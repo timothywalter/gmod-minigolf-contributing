@@ -1,6 +1,6 @@
 ![The Minigolf Logo by Syff](.github/assets/logo_with_background.png)
 
-# About this addon
+# MiniGolf Mapping Dev Kit
 
 This is not the whole MiniGolf gamemode, but rather a minimal testing addon mappers can use to test their maps. Unlike the MiniGolf gamemode (which for now is closed-source), this addon is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
 
@@ -18,6 +18,7 @@ This is not the whole MiniGolf gamemode, but rather a minimal testing addon mapp
 The mapper has full control of the minigolf tracks using the scripted entities (SENTs) specified in the chapter below.
 
 ![Example of a sent_minigolf_start and trigger_oob brush](.github/assets/guide_mapping_object.jpg)
+
 
 ## Scripted Entity Reference
 
@@ -59,3 +60,8 @@ The mapper has full control of the minigolf tracks using the scripted entities (
 
 * Cool experimental map by [Elkinda](https://steamcommunity.com/id/Elkinda/): [golf_test_course20.vmf](https://mega.nz/file/h1BlEAwK#E3YEXd41_tgTBmjmD1Uu2h4RXlUhMqnPIZT-b7WFNq4) (Compiled: [golf_test_course20.bsp](https://mega.nz/file/tsgVTSgI#4L-KcURZOAHDOf7wxRekFjOmdXcF8mzQfe0swqz6uuk))
 * Start of a simpler map by Timothy: [golf_desert_alpha3.vmf](https://mega.nz/file/cwhxxBjb#HM4SEO7TDeVLljNFTb_ncHLvn2Vl2HsSzr_9o7nUq0M) (Compiled: [golf_desert_alpha3.bsp](https://mega.nz/file/UpwlxL7L#G6gzQKi501-584jLmWRxwJGYpZzOcGv_CSvswS0cl44))
+
+
+# Problems, Bugs and Suggestions
+
+If you wish to report a bug, get help with a problem or give a suggestion: head over to the Issues page of this repo and make yourself heard.
