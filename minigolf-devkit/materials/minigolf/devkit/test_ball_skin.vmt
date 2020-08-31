@@ -1,0 +1,10 @@
+
+"VertexLitGeneric"
+{
+	"$basetexture" "minigolf/devkit/test_ball_skin"
+	"$surfaceprop" "plastic"
+	"$bumpmap" "minigolf/devkit/test_ball_skin_normal"
+
+
+	"$model" 1
+}

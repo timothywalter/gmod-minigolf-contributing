@@ -54,6 +54,7 @@ function ENT:Initialize()
 	self:SetMoveType( MOVETYPE_VPHYSICS ) -- Automatically called by PhysicsInitSphere
 	self:SetSolid( SOLID_VPHYSICS ) -- Overriden by PhysicsInitSphere to SOLID_BBOX
 	self:SetCustomCollisionCheck(true)
+	self.trail = util.SpriteTrail(self, 0, Color(255, 255, 255), false, 15, 1, 4, 0.125, "minigolf/devkit/test_trail")
 
  	-- Set perfect sphere collisions (54mm of diameter)
 	self:PhysicsInitSphere(0.94, "minigolf_ball")
@@ -68,10 +69,10 @@ function ENT:Initialize()
 	end
 
 	self:Activate()
-	self:SetStrokes(0)
 end
 
 function ENT:OnRemove()
+	SafeRemoveEntity(self.trail)
 end
 
 function ENT:PhysicsCollide(data, physObj)
@@ -185,6 +186,9 @@ function ENT:SetGolfer(golfer)
 	golfer:SetNWEntity("Ball", self)
 	self:SetNWString("GolferName", golfer:Nick())
 	self:SetNWEntity("Golfer", golfer)
+	self:SetMaterial("minigolf/devkit/test_ball_skin")
+	self:SetColor(Color(255, 255, 255))
+	self:SetRenderMode(RENDERMODE_TRANSCOLOR)
 end
 
 function ENT:GetGolfer()
@@ -198,15 +202,6 @@ end
 
 function ENT:GetStart()
 	return self._Start
-end
-
-function ENT:SetStrokes(amount)
-	self._Strokes = amount
-	self:SetNWInt("Strokes", amount)
-end
-
-function ENT:GetStrokes()
-	return self._Strokes
 end
 
 function ENT:OnTakeDamage(dmgInfo)
@@ -231,8 +226,6 @@ net.Receive("setBallForce", function(len, ply)
 
 		if(hookCall ~= false)then
 			rollBallInDirection(ball, -ballAngle:Right() * ballForce)
-
-			ball:SetStrokes(ball:GetStrokes() + 1)
 		end
 
 		ball = nil

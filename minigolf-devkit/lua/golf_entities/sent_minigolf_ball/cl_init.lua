@@ -75,27 +75,45 @@ hook.Add("SetupMove", "MiniGolf.ScrollToAdjustPower", function(golfer, moveData,
 	end
 end)
 
+local testAreaEffectColor = Color(255, 255, 255)
+local testAreaEffect = Material("minigolf/devkit/test_area_effect.png")
 hook.Add("PostDrawTranslucentRenderables", "MiniGolf.DrawDirectionArea", function(isDrawingDepth, isDrawSkybox)
 	if(isDrawSkybox)then return; end;
 
-	if(IsValid(LocalPlayer()) and meteringVelocity)then
-		local ball = LocalPlayer():GetNWEntity("Ball")
+	local ball = LocalPlayer():GetNWEntity("Ball")
 
-		if(IsValid(ball))then
-			local directionVector = LocalPlayer():EyeAngles():Forward()
-			local angle = directionVector:Angle()
+	if(IsValid(ball))then
+		local directionVector = LocalPlayer():EyeAngles():Forward()
+		local angle = directionVector:Angle()
+		
+		angle:RotateAroundAxis(Vector(0,0,1), -90)
+		angle = Angle(0, angle.y, maxPitch ~= 0 and currentPitch or 0)
+
+		currentAngle = angle
+
+		local angleNoPitch = Angle(angle)
+
+		angleNoPitch.r = 0
+
+
+		local width, height = testAreaEffect:Width(), testAreaEffect:Height()
+		cam.Start3D2D(ball:GetPos(), angleNoPitch, .03)
+			surface.SetDrawColor(testAreaEffectColor)
+			surface.SetMaterial(testAreaEffect)
+			surface.DrawTexturedRect(-width * .5, -height * .5, width, height)
+
+			if(currentPitch > 0)then
+				surface.SetDrawColor(0, 0, 0, 255)
+				surface.SetMaterial(arrow)
+				local texWidth = 256
+				surface.DrawTexturedRect(-(texWidth * .5), -FORCE_MAX, 256, FORCE_MAX)
+			end
+		cam.End3D2D()
+
+		if(IsValid(LocalPlayer()) and meteringVelocity)then
 			local forceHeight = FORCE_MAX * currentForce
 			local start = ball:GetStart()
 			local maxPitch = start:GetMaxPitch()
-
-			angle:RotateAroundAxis(Vector(0,0,1), -90)
-			angle = Angle(0, angle.y, maxPitch ~= 0 and currentPitch or 0)
-
-			currentAngle = angle
-
-			local angleNoPitch = Angle(angle)
-
-			angleNoPitch.r = 0
 
 			cam.Start3D2D(ball:GetPos(), angleNoPitch, .03)
 				if(currentPitch > 0)then

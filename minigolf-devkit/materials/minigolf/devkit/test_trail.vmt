@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$baseTexture" "trails/AwesomeFace"
+	"$baseTexture" "minigolf/devkit/test_trail"
 	
 	"$additive" 0
 	"$vertexcolor" 1

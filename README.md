@@ -35,14 +35,21 @@ Do you want to help us making maps for minigolf? [Check out the guide and exampl
 
 ## Ball Skins
 
-Hahaha! Ok now to business: there's an example in the [.github/assets/ball_skins](.github/assets/ball_skins) directory. It's of a Dragon Ball Z ball which has a normal map. [A normal map describes depth](https://en.wikipedia.org/wiki/Normal_mapping) to the Source Engine. Here's a handy online tool to create normal maps @ [cpetry.github.io/](https://cpetry.github.io/NormalMap-Online/)
+Hahaha! Ok now to business: there's an example in the [addon materials directory](minigolf-devkit/materials/minigolf/devkit/). It's of a Dragon Ball Z ball which has a normal map. [A normal map describes depth](https://en.wikipedia.org/wiki/Normal_mapping) to the Source Engine. Here's a handy online tool to create normal maps @ [cpetry.github.io/](https://cpetry.github.io/NormalMap-Online/)
+
+To test your own creation simply name it `test_ball_skin.vtf`, `test_ball_skin.vmt` and `test_ball_skin_normal.vtf` and overwrite the files in [this directory](minigolf-devkit/materials/minigolf/devkit/).
 
 
 ## Trails
 
-Our trails are the same as the trails you're used to in Garry's Mod. We use [util.SpriteTrail](https://wiki.facepunch.com/gmod/util.SpriteTrail) to attach them to players and balls. Check the [.github/assets/trails](.github/assets/trails) directory for an example taken out of [this repository (contains more examples)](http://www.frostmournemc.com/gmod/orangebox/garrysmod/materials/trails/).
+Our trails are the same as the trails you're used to in Garry's Mod. We use [util.SpriteTrail](https://wiki.facepunch.com/gmod/util.SpriteTrail) to attach them to players and balls. Check the [addon materials directory](minigolf-devkit/materials/minigolf/devkit/) for an example taken out of [this repository (contains more examples)](http://www.frostmournemc.com/gmod/orangebox/garrysmod/materials/trails/).
+
+To test your own creation simply name it `test_trail.vtf` and `test_trail.vmt` and overwrite the files in [this directory](minigolf-devkit/materials/minigolf/devkit/).
 
 
 ## Ball Area Effects
 
-These are the easiest to make. Simply create a `.png` file with a 1:1 aspect ratio(256x256, 512x512, 1024*1024, etc). The ball will be in the center of it, so have your art be around that. An example can be found in the [.github/assets/ball_area_effects](.github/assets/ball_area_effects) directory
+These are the easiest to make. Simply create a `.png` file with a 1:1 aspect ratio(256x256, 512x512, 1024*1024, etc). The ball will be in the center of it, so have your art be around that. An example can be found in the [addon materials directory](minigolf-devkit/materials/minigolf/devkit/)
+
+To test your own creation simply name it `test_area_effect.png` and overwrite the file in [this directory](minigolf-devkit/materials/minigolf/devkit/).
+

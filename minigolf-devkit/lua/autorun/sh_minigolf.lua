@@ -92,7 +92,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
       halo.Add( ents.FindByClass( "sent_minigolf_*" ), Color( 255, 0, 0 ), 5, 5, 2 )
     end)
 
-    local devKitLogo = Material("minigolf/logo_compact_mapkit.png")
+    local devKitLogo = Material("minigolf/devkit/logo_compact.png")
     local logoW, logoH = 256, 256
     local PADDING = 5
     
