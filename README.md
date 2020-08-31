@@ -49,7 +49,7 @@ To test your own creation simply name it `test_trail.vtf` and `test_trail.vmt` a
 
 ## Ball Area Effects
 
-These are the easiest to make. Simply create a `.png` file with a 1:1 aspect ratio(256x256, 512x512, 1024*1024, etc). The ball will be in the center of it, so have your art be around that. An example can be found in the [addon materials directory](minigolf-devkit/materials/minigolf/devkit/)
+These are the easiest to make. Simply create a `.png` file and imagine the ball in the center of it, creating your art around the middle. An example can be found in the [addon materials directory](minigolf-devkit/materials/minigolf/devkit/)
 
 To test your own creation simply name it `test_area_effect.png` and overwrite the file in [this directory](minigolf-devkit/materials/minigolf/devkit/).
 
