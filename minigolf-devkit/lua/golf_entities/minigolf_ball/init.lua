@@ -1,5 +1,3 @@
-if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
-
 --[[
 	Credits:
 
@@ -76,29 +74,21 @@ function ENT:OnRemove()
 end
 
 function ENT:PhysicsCollide(data, physObj)
-	if(IsValid(data.HitEntity) and data.HitEntity:GetClass() == "sent_minigolf_goal")then
-		if(data.HitEntity:GetHoleName() == self:GetStart():GetHoleName())then
-			self._Golfer:ChatPrint("Finished the hole!")
-			self._Golfer.Ball = nil
-			self:Remove()
-		end
-	else
-		local speed, hitEnt = data.Speed, data.HitEntity
-		local newVelocity = physObj:GetVelocity()
-		local oldVelocityLength = data.OurOldVelocity:Length()
+	local speed, hitEnt = data.Speed, data.HitEntity
+	local newVelocity = physObj:GetVelocity()
+	local oldVelocityLength = data.OurOldVelocity:Length()
 
-		newVelocity = physObj:GetVelocity():GetNormal() * math.max(oldVelocityLength, speed)
+	newVelocity = physObj:GetVelocity():GetNormal() * math.max(oldVelocityLength, speed)
 
-		if(oldVelocityLength <= 0.14) then
-			physObj:SetVelocity(Vector(0, 0, 0))
-			physObj:EnableMotion(false)
-			return physObj:EnableMotion(true)
-		end
-
-		newVelocity = newVelocity * 0.75
-		
-		return physObj:SetVelocity(newVelocity)
+	if(oldVelocityLength <= 0.14) then
+		physObj:SetVelocity(Vector(0, 0, 0))
+		physObj:EnableMotion(false)
+		return physObj:EnableMotion(true)
 	end
+
+	newVelocity = newVelocity * 0.75
+	
+	return physObj:SetVelocity(newVelocity)
 end
 
 function ENT:Think()

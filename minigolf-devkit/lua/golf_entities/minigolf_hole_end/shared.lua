@@ -1,6 +1,5 @@
-if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
-
-DEFINE_BASECLASS( "base_anim" )
+ENT.Base = "base_brush"
+ENT.Type = "brush"
 
 ENT.PrintName = "MiniGolf Goal"
 ENT.Author = "TJjokerR"

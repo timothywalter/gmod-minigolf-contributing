@@ -1,5 +1,3 @@
-if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
-
 AddCSLuaFile("cl_init.lua");
 AddCSLuaFile("shared.lua");
 include("shared.lua");
@@ -27,7 +25,7 @@ function ENT:Initialize()
 end
 
 function ENT:SpawnBall(activator)
-	local ball = ents.Create("sent_minigolf_ball")
+	local ball = ents.Create("minigolf_ball")
 	ball:SetPos(self:GetPos())
 	ball:Spawn()
 

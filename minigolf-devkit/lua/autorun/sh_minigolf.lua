@@ -20,38 +20,38 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
   -- Load the entities
   ENT = {}
   if CLIENT then
-  include("golf_entities/sent_minigolf_ball/cl_init.lua")
+  include("golf_entities/minigolf_ball/cl_init.lua")
   else
-  include("golf_entities/sent_minigolf_ball/init.lua")
+  include("golf_entities/minigolf_ball/init.lua")
   end
-  scripted_ents.Register(ENT, "sent_minigolf_ball")
+  scripted_ents.Register(ENT, "minigolf_ball")
   
   ENT = {}
   if CLIENT then
-    include("golf_entities/sent_minigolf_start/cl_init.lua")
+    include("golf_entities/minigolf_hole_start/cl_init.lua")
   else
-    include("golf_entities/sent_minigolf_start/init.lua")
+    include("golf_entities/minigolf_hole_start/init.lua")
   end
-  scripted_ents.Register(ENT, "sent_minigolf_start")
+  scripted_ents.Register(ENT, "minigolf_hole_start")
 
   ENT = {}
   if CLIENT then
-    include("golf_entities/sent_minigolf_goal/cl_init.lua")
+    include("golf_entities/minigolf_hole_end/cl_init.lua")
   else
-    include("golf_entities/sent_minigolf_goal/init.lua")
+    include("golf_entities/minigolf_hole_end/init.lua")
   end
-  scripted_ents.Register(ENT, "sent_minigolf_goal")
+  scripted_ents.Register(ENT, "minigolf_hole_end")
 
   ENT = {}
   if SERVER then
-  include("golf_entities/trigger_oob/init.lua")
+  include("golf_entities/minigolf_trigger_oob/init.lua")
   end
-  scripted_ents.Register(ENT, "trigger_oob")
+  scripted_ents.Register(ENT, "minigolf_trigger_oob")
 
   -- Ensure that players don't collide with balls
   hook.Add("ShouldCollide", "MiniGolf.StopPlayerCollisionWithBalls", function(ent1, ent2)
     if(IsValid(ent1) and IsValid(ent2) 
-      and (ent1:IsPlayer() or ent2:IsPlayer()) and (ent1:GetClass() == "sent_minigolf_ball" or ent2:GetClass() == "sent_minigolf_ball")) then 
+      and (ent1:IsPlayer() or ent2:IsPlayer()) and (ent1:GetClass() == "minigolf_ball" or ent2:GetClass() == "minigolf_ball")) then 
       return false 
     end
   end)
@@ -67,7 +67,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
         local tr = golfer:GetEyeTraceNoCursor()
     
         for _, ent in ipairs(ents.FindInSphere(tr.HitPos, 128))do
-          if(IsValid(ent) and ent:GetClass() == "sent_minigolf_ball")then
+          if(IsValid(ent) and ent:GetClass() == "minigolf_ball")then
             ent:OnUse(golfer)
           end
         end
@@ -89,7 +89,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
     end)
     
     hook.Add("PreDrawHalos", "MiniGolf.AddSentHalos", function()
-      halo.Add( ents.FindByClass( "sent_minigolf_*" ), Color( 255, 0, 0 ), 5, 5, 2 )
+      halo.Add( ents.FindByClass( "minigolf_*" ), Color( 255, 0, 0 ), 5, 5, 2 )
     end)
 
     local devKitLogo = Material("minigolf/devkit/logo_compact.png")
@@ -113,7 +113,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
 
 
       -- Draw start info
-      for k,v in pairs(ents.FindByClass( "sent_minigolf_start" )) do
+      for k,v in pairs(ents.FindByClass( "minigolf_hole_start" )) do
         local vPos = v:GetPos():ToScreen()
         local currentY = vPos.y
 
@@ -152,21 +152,8 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
         currentY = currentY + PADDING + textH
       end
       
-      -- Draw goal info
-      for k,v in pairs(ents.FindByClass( "sent_minigolf_goal" )) do
-        local vPos = v:GetPos():ToScreen()
-        local currentY = vPos.y
-
-        surface.SetTextColor(255, 255, 255, 200)
-        surface.SetFont("Trebuchet24")
-        local textH = select(2, surface.GetTextSize("asd"))
-        
-        surface.SetTextPos(vPos.x, currentY)
-        surface.DrawText("Goal of the hole: '" .. v:GetNWString("HoleName") .. "'") 
-      end
-      
       -- Draw ball info
-      for k,v in pairs(ents.FindByClass( "sent_minigolf_ball" )) do
+      for k,v in pairs(ents.FindByClass( "minigolf_ball" )) do
         local vPos = v:GetPos():ToScreen()
         local currentY = vPos.y
 

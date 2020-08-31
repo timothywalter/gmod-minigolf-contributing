@@ -1,13 +1,9 @@
-if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
-
-DEFINE_BASECLASS( "base_brush" )
-
 ENT.Base = "base_brush"
 ENT.Type = "brush"
 
 function ENT:StartTouch(ent)
 	if ent and ent:IsValid()then
-		if(ent:GetClass() == "sent_minigolf_ball")then
+		if(ent:GetClass() == "minigolf_ball")then
 			ent:GetGolfer():ChatPrint("Ball went out of bounds! Resetting in a second...")
 
 			ent:SetRenderMode(RENDERMODE_TRANSALPHA)

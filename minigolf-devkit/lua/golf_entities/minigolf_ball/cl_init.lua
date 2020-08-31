@@ -1,5 +1,3 @@
-if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
-
 include("shared.lua")
 
 function ENT:Initialize()
@@ -101,13 +99,6 @@ hook.Add("PostDrawTranslucentRenderables", "MiniGolf.DrawDirectionArea", functio
 			surface.SetDrawColor(testAreaEffectColor)
 			surface.SetMaterial(testAreaEffect)
 			surface.DrawTexturedRect(-width * .5, -height * .5, width, height)
-
-			if(currentPitch > 0)then
-				surface.SetDrawColor(0, 0, 0, 255)
-				surface.SetMaterial(arrow)
-				local texWidth = 256
-				surface.DrawTexturedRect(-(texWidth * .5), -FORCE_MAX, 256, FORCE_MAX)
-			end
 		cam.End3D2D()
 
 		if(IsValid(LocalPlayer()) and meteringVelocity)then
