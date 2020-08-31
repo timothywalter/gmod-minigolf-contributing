@@ -1,67 +1,48 @@
 ![The Minigolf Logo by Syff](.github/assets/logo_with_background.png)
 
-# MiniGolf Mapping Dev Kit
+# MiniGolf Contributions
 
-This is not the whole MiniGolf gamemode, but rather a minimal testing addon mappers can use to test their maps. Unlike the MiniGolf gamemode (which for now is closed-source), this addon is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
+If you wish to report a bug, get help with a problem or give a suggestion: head over to the Issues tab of this repo and make yourself heard.
+
+
+## Dev Kit Addon
+
+This is not the whole MiniGolf gamemode, but rather a minimal testing addon mappers (and in the future other content developers) can use to test their content. Unlike the MiniGolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
 
 
 ## Usage Instructions
 
 1. Download all the files in this repository (Click `code` -> `Download .ZIP` above or clone this repo)
-2. Create a folder in your `garrysmod/addons` folder, name it something like `minigolf-map-debug`
-3. Extract all the files into it, ensuring that the `addon.txt` file and `lua` folder are directly located in `garrysmod/addons/minigolf-map-debug`.
+2. Exctract the files from the zip
+3. Copy the `minigolf-devkit` folder to your `garrysmod/addons` folder. Ensure that the `addon.txt` file and `lua` folder are directly located in `garrysmod/addons/minigolf-devkit`.
 4. Restart Garry's Mod if it was opened (required)
-5. Load up a `golf_` map and you'll find debug information and the ability to play basic minigolf.
+5. Select a `golf_` map
+6. Start a Multiplayer server:
+  ![Starting a multiplayer server](.github/assets/local_server.jpg)
+7. You'll find debug information and the ability to play basic minigolf:
+  ![The debug hud](.github/assets/debug_hud.jpg)
 
 
-# Mapping
-The mapper has full control of the minigolf tracks using the scripted entities (SENTs) specified in the chapter below.
+# Contributing
 
-![Example of a sent_minigolf_start and trigger_oob brush](.github/assets/guide_mapping_object.jpg)
-
-
-## Scripted Entity Reference
-
-* Start entity: `sent_minigolf_start`
-  * Describes where players start to play on a minigolf track (by pressing USE on it). The hole and description are displayed on the players' GUI.
-  * These following properties are valid for this entity:
-    * `par`: how many strokes is average (required)
-    * `hole`: the name (required)
-    * `limit`: time limit in seconds (default: 60)
-    * `description`: a description for the hole
-    * `maxStrokes`: how many strokes are allowed before the game ends automatically (default: 12)
-    * `maxPitch`: how many degrees pitch a player can make a lob shot at, don't specify or set as 0 to indicate no lob shots allowed (default: 0)
-  * How to create this Point Entity in hammer:
-    1. In hammer [spawn a new Point Entity](https://developer.valvesoftware.com/wiki/Entity_Creation) and select it
-    2. [Open the object properties by pressing Ctrl + Enter](https://developer.valvesoftware.com/wiki/Hammer_Object_Properties_Dialog)
-    3. In the `Class` dropdown select all text and remove it, typing `sent_minigolf_start` instead. The entity will always have the [`Obsolete` icon](https://developer.valvesoftware.com/wiki/Obsolete)
-    4. Turn of `SmartEdit` by clicking the button
-    5. Click `Add`
-    6. Now type in the properties listed above under `Key`. 
-    7. Give your desired value under `Value` then click OK to finalize your configuration.
-    8. When the map is loaded by the gamemode these values are stored in memory.
-* End entity: `sent_minigolf_goal`
-  * Specifies the end/goal/hole. When the ball touches this the player will have reached the end in as many strokes as they have up to that point.
-  * Because of this design, in theory it's possible (untested) to have a hole with a single start and multiple valid ends (that all point to the same start.)
-  * These following properties are valid for this entity: 
-    * `hole`: the name (must match a start hole’s name)
-  * See `sent_minigolf_start` on how to create this entity in hammer. Except for the classname and keyvalues instructions are the same.
-* Out of bounds brush: `trigger_oob`
-  * When the ball touches this brush the ball is considered Out-Of-Bounds. The ball will be reset to the last valid position.
-  * There are no properties for this entity.
-  * How to create this Brush Entity in hammer:
-    1. Create one or multiple brushes in Hammer, along the edge and over the top of the minigolf track. 
-    2. Give these brushes the 'trigger' material on all faces. 
-    3. Now press [Ctrl + T to tie it to an entity](https://developer.valvesoftware.com/wiki/Hammer_Tools_Menu#Tie_to_Entity_.3CCtrl.2BT.3E)
-    4. Choose `trigger_oob` as the entity type by typing it into the class name.
+Do you have a trail, ball texture, area effect or other content you would like to share and get into the gamemode? Create an issue using the right template. In the Issues tab of this repository click `New issue > Share Content`. _(Take note that we internally moderate content to maintain continuity and improve quality)_
 
 
-## Examples
+## Mapping
 
-* Cool experimental map by [Elkinda](https://steamcommunity.com/id/Elkinda/): [golf_test_course20.vmf](https://mega.nz/file/h1BlEAwK#E3YEXd41_tgTBmjmD1Uu2h4RXlUhMqnPIZT-b7WFNq4) (Compiled: [golf_test_course20.bsp](https://mega.nz/file/tsgVTSgI#4L-KcURZOAHDOf7wxRekFjOmdXcF8mzQfe0swqz6uuk))
-* Start of a simpler map by Timothy: [golf_desert_alpha3.vmf](https://mega.nz/file/cwhxxBjb#HM4SEO7TDeVLljNFTb_ncHLvn2Vl2HsSzr_9o7nUq0M) (Compiled: [golf_desert_alpha3.bsp](https://mega.nz/file/UpwlxL7L#G6gzQKi501-584jLmWRxwJGYpZzOcGv_CSvswS0cl44))
+Do you want to help us making maps for minigolf? [Check out the guide and examples here!](MAPPING_GUIDE.md)
 
 
-# Problems, Bugs and Suggestions
+## Ball Skins
 
-If you wish to report a bug, get help with a problem or give a suggestion: head over to the Issues page of this repo and make yourself heard.
+Hahaha! Ok now to business: there's an example in the [.github/assets/ball_skins](.github/assets/ball_skins) directory. It's of a Dragon Ball Z ball which has a normal map. [A normal map describes depth](https://en.wikipedia.org/wiki/Normal_mapping) to the Source Engine. Here's a handy online tool to create normal maps @ [cpetry.github.io/](https://cpetry.github.io/NormalMap-Online/)
+
+
+## Trails
+
+Our trails are the same as the trails you're used to in Garry's Mod. We use [util.SpriteTrail](https://wiki.facepunch.com/gmod/util.SpriteTrail) to attach them to players and balls. Check the [.github/assets/trails](.github/assets/trails) directory for an example taken out of [this repository (contains more examples)](http://www.frostmournemc.com/gmod/orangebox/garrysmod/materials/trails/).
+
+
+## Ball Area Effects
+
+These are the easiest to make. Simply create a `.png` file with a 1:1 aspect ratio(256x256, 512x512, 1024*1024, etc). The ball will be in the center of it, so have your art be around that. An example can be found in the [.github/assets/ball_area_effects](.github/assets/ball_area_effects) directory
