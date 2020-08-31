@@ -7,7 +7,7 @@ If you wish to report a bug, get help with a problem or give a suggestion: head 
 
 ## Dev Kit Addon
 
-This is not the whole MiniGolf gamemode, but rather a minimal testing addon mappers (and in the future other content developers) can use to test their content. Unlike the MiniGolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
+This is not the whole MiniGolf gamemode, but rather a minimal framework that mapper and other content developers can use to test their content. Unlike the MiniGolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
 
 
 ## Usage Instructions
@@ -21,6 +21,8 @@ This is not the whole MiniGolf gamemode, but rather a minimal testing addon mapp
   ![Starting a multiplayer server](.github/assets/local_server.jpg)
 7. You'll find debug information and the ability to play basic minigolf:
   ![The debug hud](.github/assets/debug_hud.jpg)
+
+Read on to find out how to test other content
 
 
 # Contributing
@@ -53,3 +55,9 @@ These are the easiest to make. Simply create a `.png` file and imagine the ball 
 
 To test your own creation simply name it `test_area_effect.png` and overwrite the file in [this directory](minigolf-devkit/materials/minigolf/devkit/).
 
+
+## Contributing in different ways
+
+Do you have some cool skill, thing or some other way you'd like to help us? Create an issue and let us know!
+
+Thanks!
