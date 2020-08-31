@@ -1,4 +1,4 @@
-if(MiniGolf)then return end -- Don't run if we have the gamemode running
+if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
 
 AddCSLuaFile("cl_init.lua");
 AddCSLuaFile("shared.lua");

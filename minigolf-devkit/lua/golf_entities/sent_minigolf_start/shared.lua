@@ -1,3 +1,5 @@
+if(isMiniGolfGamemodeActive())then return end -- Don't run if we have the gamemode running
+
 DEFINE_BASECLASS( "base_anim" )
 
 ENT.PrintName = "MiniGolf Start"
