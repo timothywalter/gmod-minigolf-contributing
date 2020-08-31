@@ -50,13 +50,13 @@ end
 
 function ENT:KeyValue(key, value)
 	if(key == "hole")then
-		self:SetHoleName(value)
+		self:SetHoleName(tostring(value):Trim())
 	elseif(key == "par")then
 		self:SetPar(tonumber(value))
 	elseif(key == "limit")then
 		self:SetLimit(tonumber(value))
 	elseif(key == "description")then
-		self:SetDescription(value)
+		self:SetDescription(tostring(value):Trim())
 	elseif(key == "maxStrokes")then
 		self:SetMaxStrokes(tonumber(value))
 	elseif(key == "maxPitch")then

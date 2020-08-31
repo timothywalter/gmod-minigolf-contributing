@@ -35,7 +35,7 @@ end
 
 function ENT:KeyValue(key, value)
 	if(key == "hole")then
-		self:SetHoleName(value)
+		self:SetHoleName(tostring(value):Trim())
 	end
 end
 
