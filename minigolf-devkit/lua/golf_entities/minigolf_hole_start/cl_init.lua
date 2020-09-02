@@ -13,7 +13,7 @@ function ENT:GetHoleName()
 end
 
 function ENT:GetPar()
-	return self:GetNWInt("HolePar", -1)
+	return self:GetNWInt("HolePar", 3)
 end
 
 function ENT:GetLimit()

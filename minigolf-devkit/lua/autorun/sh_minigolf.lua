@@ -43,6 +43,14 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
   scripted_ents.Register(ENT, "minigolf_hole_end")
 
   ENT = {}
+  if CLIENT then
+    include("golf_entities/minigolf_hole_flag/cl_init.lua")
+  else
+    include("golf_entities/minigolf_hole_flag/init.lua")
+  end
+  scripted_ents.Register(ENT, "minigolf_hole_flag")
+
+  ENT = {}
   if SERVER then
   include("golf_entities/minigolf_trigger_oob/init.lua")
   end

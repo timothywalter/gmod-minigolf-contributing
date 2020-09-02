@@ -20,7 +20,7 @@ The mapper has full control of the minigolf tracks using the scripted entities (
 * Start entity: `minigolf_hole_start`
   * Describes where players start to play on a minigolf track (by pressing `USE` on it). The hole and description are displayed on the players' GUI.
   * These following properties are valid for this entity:
-    * `par`: how many strokes is average (required)
+    * `par`: how many strokes is average (default: 3)
     * `hole`: the name (required)
     * `limit`: time limit in seconds (default: 60)
     * `description`: a description for the hole

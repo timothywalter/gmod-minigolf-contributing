@@ -3,7 +3,7 @@ AddCSLuaFile("shared.lua");
 include("shared.lua");
 
 function ENT:SpawnFunction( ply, tr, ClassName )
-	if ( !tr.Hit ) then return end
+	if ( not tr.Hit ) then return end
 
 	local ent = ents.Create( ClassName )
 	ent:SetPos( tr.HitPos + (tr.HitNormal * 15) )
@@ -105,7 +105,7 @@ function ENT:SetPar(par)
 end
 
 function ENT:GetPar()
-	return self._HolePar
+	return self._HolePar or 3
 end
 
 function ENT:SetLimit(limitInSeconds)
