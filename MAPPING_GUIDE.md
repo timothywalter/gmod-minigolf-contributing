@@ -6,13 +6,17 @@ The mapper has full control of the minigolf tracks using the scripted entities (
 
 ## Examples
 
-### V2.0
+* Almost complete desert map by Timothy: [golf_desert_alpha14.vmf](https://mega.nz/file/0pQ2xCwK#-sucFspNSbrhFL7TbZAinv_wLFnUuCdO01CW_EYvAWI) ([compiled .bsp](https://mega.nz/file/UoBQDK5C#hddIisUFQx76LGsxLu3vmodgJi3qLebt9OEEnZkX2cg))
 
-* Experimental map by Elkinda: [golf_test_course21.vmf](https://mega.nz/file/k9I0zQbJ#dPyflT2VTlAb-5rNSg8Xos5r7DuNkqeNw9tnWiy_p9s) (compiled .bsp: https://mega.nz/file/I5QwnSyZ#gwDysjK2NCMgydm7Tf9yuL2K-E6sVF7LhX5iFdl6lDE)
+* Experimental map by Elkinda: [golf_test_course21.vmf](https://mega.nz/file/k9I0zQbJ#dPyflT2VTlAb-5rNSg8Xos5r7DuNkqeNw9tnWiy_p9s) ([compiled .bsp](https://mega.nz/file/I5QwnSyZ#gwDysjK2NCMgydm7Tf9yuL2K-E6sVF7LhX5iFdl6lDE))
 
-* Minimal development map by Timothy: [golf_dev_minimal_v2.vmf](https://mega.nz/file/g0J2jYiA#rvcFz5Vu-ipX3UUICYxOBkCNC7KBcHVamoWnPRTs40k) (compiled .bsp: https://mega.nz/file/c4RQWYob#Qu122UkldTrG5wSVFKqeG4spvlo60rUPxd5xB0Qe_W0)
+* Minimal development map by Timothy: [golf_dev_minimal_v2.vmf](https://mega.nz/file/g0J2jYiA#rvcFz5Vu-ipX3UUICYxOBkCNC7KBcHVamoWnPRTs40k) ([compiled .bsp](https://mega.nz/file/c4RQWYob#Qu122UkldTrG5wSVFKqeG4spvlo60rUPxd5xB0Qe_W0))
 
-* Start of a community map by Timothy: [golf_garage_league_start.vmf](https://mega.nz/file/Z0BAjaBA#1xoXjJxDF0vqpaSi6DLeaLg7pVrzatzTtWA_3_BwIX4) (compiled .bsp: https://mega.nz/file/ElQUmQ4b#EwK8kWFfKcdHL7ZngUWKDQVehFBsjiwXP_7978HxImY)
+* Community Map: [golf_garage_league_start2.vmf](https://mega.nz/file/8gJ21QwL#a7IkniJWbvy709oF_VnMP7pTMm_zS59woA2xpyfguew) ([compiled .bsp](https://mega.nz/file/0wBgVaCC#eFux76pG3qXKuXkoia18Lb6d83eT3aj9i0PEJRTygfk))
+  * Holes by (garage boxes 0 through 7, 10 and 11 are free):
+
+    8. **Elkinda's "Terrain"**
+    9. **Timothy's "Bouncer"**
 
 
 ## Scripted Entity Reference
