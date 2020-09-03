@@ -45,6 +45,12 @@ The mapper has full control of the minigolf tracks using the scripted entities (
     2. Give these brushes the 'trigger' material on all faces. 
     3. Now press [`Ctrl + T` to tie it to an entity](https://developer.valvesoftware.com/wiki/Hammer_Tools_Menu#Tie_to_Entity_.3CCtrl.2BT.3E)
     4. Choose `minigolf_hole_end` as the entity type by typing it into the class name.
+* Hole flag entity: `minigolf_hole_flag`
+  * This entity adds a flag to a hole. When the player comes near the flag it will raise, allowing them to see the ball better around the hole area.
+  * To create this entity:
+    1. Create a point entity with the class `minigolf_hole_flag`
+    2. Rotate the entity to change the rotation of the flag.
+    3. Make sure the entity is touching the related `minigolf_hole_end`
 * Out of bounds brush: `minigolf_trigger_oob`
   * When the ball touches this brush the ball is considered Out-Of-Bounds. The ball will be reset to the last valid position.
   * There are no properties for this entity.
