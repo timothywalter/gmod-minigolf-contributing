@@ -53,7 +53,11 @@ The mapper has full control of the minigolf tracks using the scripted entities (
   * This entity adds a flag to a hole. When the player comes near the flag it will raise, allowing them to see the ball better around the hole area.
   * To create this entity:
     1. Create a point entity with the class `minigolf_hole_flag`
-    2. Rotate the entity to change the rotation of the flag.
+    
+    2. Rotate the entity in the object properties menu to change the rotation of the flag relative to the top(x/y) view:
+    
+       ![Showing the direction relative to the top view](.github/assets/mapping/flag_direction.jpg)
+    
     3. Make sure the entity is touching the related `minigolf_hole_end`
 * Out of bounds brush: `minigolf_trigger_oob`
   * When the ball touches this brush the ball is considered Out-Of-Bounds. The ball will be reset to the last valid position.

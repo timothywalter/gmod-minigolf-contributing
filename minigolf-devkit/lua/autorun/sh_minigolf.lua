@@ -66,6 +66,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
 
   if(SERVER)then
     hook.Add("PlayerLoadout", "MiniGolf.StripWeaponsOnSpawn", function(golfer)
+      golfer:Give("gmod_tool")
       -- true: Prevents further default Loadout (also from addons)
       return true
     end)
