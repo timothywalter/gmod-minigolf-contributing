@@ -12,15 +12,24 @@ This is not the whole MiniGolf gamemode, but rather a minimal framework that map
 
 ## Usage Instructions
 
-1. Download all the files in this repository (Click `code` -> `Download .ZIP` above or clone this repo)
-2. Exctract the files from the zip
-3. Copy the `minigolf-devkit` folder to your `garrysmod/addons` folder. Ensure that the `addon.txt` file and `lua` folder are directly located in `garrysmod/addons/minigolf-devkit`.
-4. Restart Garry's Mod if it was opened (required)
-5. Select a `golf_` map
-6. Start a Multiplayer server:
-  ![Starting a multiplayer server](.github/assets/local_server.jpg)
-7. You'll find debug information and the ability to play basic minigolf:
-  ![The debug hud](.github/assets/debug_hud.jpg)
+### Using Git
+
+1. Go to your `garrysmod/addons` directory
+2. Run the command `git clone https://github.com/timothywalter/gmod-minigolf-contributing minigolf-devkit`
+
+### Downloading as a zip
+
+1. Download all the files in this repository (Click `code` -> `Download .ZIP` above or clone this repo) and extract the files from the zip
+2. Create a `minigolf-devkit` directory in your `garrysmod/addons` directory. 
+3. Copy all files from the zip into that new directory. Ensure that the `addon.txt` file and `lua` directory are directly located in `garrysmod/addons/minigolf-devkit`.
+3. Restart Garry's Mod if it was opened (required)
+4. Select a `golf_` map
+
+### Starting
+Start a Multiplayer server:
+![Starting a multiplayer server](.github/assets/local_server.jpg)
+You'll find debug information and the ability to play basic minigolf:
+![The debug hud](.github/assets/debug_hud.jpg)
 
 Read on to find out how to test other content
 
