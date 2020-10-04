@@ -26,6 +26,8 @@ The mapper has full control of the minigolf tracks using the scripted entities (
   * These following properties are valid for this entity:
     * `par`: how many strokes is average (default: 3)
     * `hole`: the name (required)
+    * `course`: the name of the course this hole is on, for when there are multiple courses on one map (default: "", (an empty string))
+    * `order`: an incrementing number, lower numbers appear sooner on the scoreboard (always grouped by course)
     * `limit`: time limit in seconds (default: 60)
     * `description`: a description for the hole
     * `maxStrokes`: how many strokes are allowed before the game ends automatically (default: 12)
@@ -44,6 +46,7 @@ The mapper has full control of the minigolf tracks using the scripted entities (
   * Because of this design, in theory it's possible (untested) to have a hole with a single start and multiple valid ends (that all point to the same start.)
   * These following properties are valid for this entity: 
     * `hole`: the name (must match a start hole’s name)
+    * `course`: the name of the course this hole is on (must match a start hole’s course name if the start hole has one set)
   * How to create this Brush Entity in hammer:
     1. Create one or multiple brushes in Hammer, along the edge and over the top of the minigolf track. 
     2. Give these brushes the 'trigger' material on all faces. 
