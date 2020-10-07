@@ -52,7 +52,10 @@ function ENT:Initialize()
 	self:SetMoveType( MOVETYPE_VPHYSICS ) -- Automatically called by PhysicsInitSphere
 	self:SetSolid( SOLID_VPHYSICS ) -- Overriden by PhysicsInitSphere to SOLID_BBOX
 	self:SetCustomCollisionCheck(true)
-	self.trail = util.SpriteTrail(self, 0, Color(255, 255, 255), false, 15, 1, 4, 0.125, "minigolf/devkit/test_trail")
+
+	if(not MINIGOLF_NO_TRAILS)then
+		self.trail = util.SpriteTrail(self, 0, Color(255, 255, 255), false, 15, 1, 4, 0.125, "minigolf/devkit/test_trail")
+	end
 
  	-- Set perfect sphere collisions (54mm of diameter)
 	self:PhysicsInitSphere(0.94, "minigolf_ball")
@@ -219,5 +222,25 @@ net.Receive("setBallForce", function(len, ply)
 		end
 
 		ball = nil
+	end
+end)
+
+if(file.Exists("minigolf_dev_no_trails", "DATA"))then
+	MINIGOLF_NO_TRAILS = true
+end
+
+concommand.Add("minigolf_enable_trails", function( ply, cmd, args )
+	print("Next time you spawn a ball, a trail will be attached")
+	MINIGOLF_NO_TRAILS = false
+	file.Delete("minigolf_dev_no_trails")
+end)
+
+concommand.Add("minigolf_disable_trails", function( ply, cmd, args )
+	print("Next time you spawn a ball, no trail will be attached")
+	MINIGOLF_NO_TRAILS = true
+	file.Write("minigolf_dev_no_trails", "disables trails in the minigolf devkit")
+
+	for _, ball in pairs(ents.FindByClass("bminigolf_ball")) do
+		SafeRemoveEntity(ball.trail)
 	end
 end)
