@@ -65,12 +65,6 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
   end)
 
   if(SERVER)then
-    hook.Add("PlayerLoadout", "MiniGolf.StripWeaponsOnSpawn", function(golfer)
-      golfer:Give("gmod_tool")
-      -- true: Prevents further default Loadout (also from addons)
-      return true
-    end)
-
     hook.Add("KeyPress", "MiniGolf.AllowUseBall", function( golfer, key )
       if( key == IN_USE )then
         local tr = golfer:GetEyeTraceNoCursor()
