@@ -1,21 +1,21 @@
-isMiniGolfGamemodeActive = function()
+isMinigolfGamemodeActive = function()
   local gm = gmod.GetGamemode()
   
-  return gm and gm.IsMiniGolf == true
+  return gm and gm.IsMinigolf == true
 end
 
-hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
-  if(isMiniGolfGamemodeActive())then 
-    print("MiniGolf DevKit not loading: MiniGolf gamemode is active!")
+hook.Add("OnGamemodeLoaded", "Minigolf.OnlyLoadDevKitAfterGamemode", function()
+  if(isMinigolfGamemodeActive())then 
+    print("Minigolf DevKit not loading: Minigolf gamemode is active!")
     return 
   end
 
   if(not game.GetMap():StartWith("golf_"))then 
-    print("MiniGolf DevKit not loading: not on a golf map!")
+    print("Minigolf DevKit not loading: not on a golf map!")
     return 
   end
 
-  print("MiniGolf DevKit loading!")
+  print("Minigolf DevKit loading!")
 
   -- Load the entities
   ENT = {}
@@ -57,7 +57,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
   scripted_ents.Register(ENT, "minigolf_trigger_oob")
 
   -- Ensure that players don't collide with balls
-  hook.Add("ShouldCollide", "MiniGolf.StopPlayerCollisionWithBalls", function(ent1, ent2)
+  hook.Add("ShouldCollide", "Minigolf.StopPlayerCollisionWithBalls", function(ent1, ent2)
     if(IsValid(ent1) and IsValid(ent2) 
       and (ent1:IsPlayer() or ent2:IsPlayer()) and (ent1:GetClass() == "minigolf_ball" or ent2:GetClass() == "minigolf_ball")) then 
       return false 
@@ -65,7 +65,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
   end)
 
   if(SERVER)then
-    hook.Add("KeyPress", "MiniGolf.AllowUseBall", function( golfer, key )
+    hook.Add("KeyPress", "Minigolf.AllowUseBall", function( golfer, key )
       if( key == IN_USE )then
         local tr = golfer:GetEyeTraceNoCursor()
     
@@ -85,13 +85,13 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
       CHudWeaponSelection = true,
     }
     
-    hook.Add("HUDShouldDraw", "MiniGolf.HideDefaultHUD", function(name)
+    hook.Add("HUDShouldDraw", "Minigolf.HideDefaultHUD", function(name)
       if(HideDefaultHUDElements[name]) then
         return false
       end
     end)
     
-    hook.Add("PreDrawHalos", "MiniGolf.AddSentHalos", function()
+    hook.Add("PreDrawHalos", "Minigolf.AddSentHalos", function()
       halo.Add( ents.FindByClass( "minigolf_*" ), Color( 255, 0, 0 ), 5, 5, 2 )
     end)
 
@@ -99,7 +99,7 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
     local logoW, logoH = 256, 256
     local PADDING = 5
     
-    hook.Add("HUDPaint", "MiniGolf.DrawDebugUI", function()
+    hook.Add("HUDPaint", "Minigolf.DrawDebugUI", function()
       -- Draw indicators that devkit dev is running
       surface.SetDrawColor(255, 255, 255, 25)
       surface.SetMaterial(devKitLogo)
@@ -110,9 +110,9 @@ hook.Add("OnGamemodeLoaded", "MiniGolf.OnlyLoadDevKitAfterGamemode", function()
       surface.SetTextColor(255, 255, 255, 25)
       surface.SetFont("Trebuchet24")
       
-      local textW = select(1, surface.GetTextSize("MiniGolf DevKit Active"))
+      local textW = select(1, surface.GetTextSize("Minigolf DevKit Active"))
       surface.SetTextPos(logoX + (logoW * .5) - (textW * .5) - 25, PADDING + logoH - 30) -- -25 because the logo is off-center due to the flag / -30 because there's a lot of whitespace around the logo
-      surface.DrawText("MiniGolf DevKit Active")
+      surface.DrawText("Minigolf DevKit Active")
 
 
       -- Draw start info

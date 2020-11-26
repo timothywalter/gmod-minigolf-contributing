@@ -1,7 +1,7 @@
 ENT.Base = "base_brush"
 ENT.Type = "brush"
 
-ENT.PrintName = "MiniGolf Goal"
+ENT.PrintName = "Minigolf Goal"
 ENT.Author = "TJjokerR"
 ENT.Information = "The goal of a hole"
 ENT.Category = "Fun + Games"

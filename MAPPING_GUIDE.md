@@ -1,4 +1,4 @@
-# Mapping for MiniGolf
+# Mapping for Minigolf
 The mapper has full control of the minigolf tracks using the scripted entities (SENTs) specified in the chapter below.
 
 ![Example of a minigolf_hole_start and minigolf_trigger_oob brush](.github/assets/mapping/object_information_panel.jpg)

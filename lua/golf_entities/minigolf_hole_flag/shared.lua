@@ -1,6 +1,6 @@
 DEFINE_BASECLASS( "base_anim" )
 
-ENT.PrintName = "MiniGolf Hole Flag"
+ENT.PrintName = "Minigolf Hole Flag"
 ENT.Author = "Timothy Walter Lutt"
 ENT.Information = "The flag for the end of a hole"
 ENT.Category = "Fun + Games"

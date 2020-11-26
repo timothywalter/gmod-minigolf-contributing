@@ -38,8 +38,8 @@ net.Receive("getBallForce", function()
 end)
 
 -- Translate scrolling to adjusting the force
-if(game.SinglePlayer())then	ErrorNoHalt("MiniGolf Test Warning: SetupMove is not called in Singleplayer (because it's predicted). Start a listen server!\n") end
-hook.Add("SetupMove", "MiniGolf.ScrollToAdjustPower", function(golfer, moveData, userCmd)
+if(game.SinglePlayer())then	ErrorNoHalt("Minigolf Test Warning: SetupMove is not called in Singleplayer (because it's predicted). Start a listen server!\n") end
+hook.Add("SetupMove", "Minigolf.ScrollToAdjustPower", function(golfer, moveData, userCmd)
 	if(meteringVelocity)then
 		if(moveData:KeyPressed(IN_RELOAD))then
 			currentForce = FORCE_FRACTION_MIN;
@@ -75,7 +75,7 @@ end)
 
 local testAreaEffectColor = Color(255, 255, 255)
 local testAreaEffect = Material("minigolf/devkit/test_area_effect.png")
-hook.Add("PostDrawTranslucentRenderables", "MiniGolf.DrawDirectionArea", function(isDrawingDepth, isDrawSkybox)
+hook.Add("PostDrawTranslucentRenderables", "Minigolf.DrawDirectionArea", function(isDrawingDepth, isDrawSkybox)
 	if(isDrawSkybox)then return; end;
 
 	local ball = LocalPlayer():GetNWEntity("Ball")
@@ -135,7 +135,7 @@ local ballOwnerOffset = {
 	y = -25
 }
 
-hook.Add("KeyRelease", "MiniGolf.CheckForHit", function(player, key)
+hook.Add("KeyRelease", "Minigolf.CheckForHit", function(player, key)
 	if(key == IN_ATTACK and not drawingName and meteringVelocity)then
 		meteringVelocity = false
 

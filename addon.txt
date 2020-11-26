@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	"name"		"MiniGolf Map Debugger"
+	"name"		"Minigolf Map Debugger"
 	"version"	"1.0"
 	"author_name"	"Timothy Walter Lutt"
 	"author_email"	""

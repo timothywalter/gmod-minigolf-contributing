@@ -1,13 +1,13 @@
 ![The Minigolf Logo by Syff](.github/assets/logo_with_background.png)
 
-# MiniGolf Contributions
+# Minigolf Contributions
 
 If you wish to report a bug, get help with a problem or give a suggestion: head over to the Issues tab of this repo and make yourself heard.
 
 
 ## Dev Kit Addon
 
-This is not the whole MiniGolf gamemode, but rather a minimal framework that mapper and other content developers can use to test their content. Unlike the MiniGolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
+This is not the whole Minigolf gamemode, but rather a minimal framework that mapper and other content developers can use to test their content. Unlike the Minigolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
 
 
 ## Usage Instructions
