@@ -6,6 +6,8 @@ The mapper has full control of the minigolf tracks using the scripted entities (
 
 ## Examples
 
+* Mostly done map by Elkinda which combines all maps listed below into a single hub: [golf_rocket_hub_alpha2.vmf](https://mega.nz/file/YwJ3VYpZ#ENYi4mB4WAoo5yG8q9HoVXRAL7RfWCEz7pRYSQ2ltSI) ([compiled .bsp](https://mega.nz/file/xgQBHQbQ#bvPVcAeJK0t2cMNDRmVRkYOOVYHJs3NzNhABXKzRiHM))
+
 * Almost complete desert map by Timothy: [golf_desert_alpha14.vmf](https://mega.nz/file/0pQ2xCwK#-sucFspNSbrhFL7TbZAinv_wLFnUuCdO01CW_EYvAWI) ([compiled .bsp](https://mega.nz/file/UoBQDK5C#hddIisUFQx76LGsxLu3vmodgJi3qLebt9OEEnZkX2cg))
 
 * Experimental map by Elkinda: [golf_test_course21.vmf](https://mega.nz/file/k9I0zQbJ#dPyflT2VTlAb-5rNSg8Xos5r7DuNkqeNw9tnWiy_p9s) ([compiled .bsp](https://mega.nz/file/I5QwnSyZ#gwDysjK2NCMgydm7Tf9yuL2K-E6sVF7LhX5iFdl6lDE))
