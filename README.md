@@ -1,13 +1,15 @@
 ![The Minigolf Logo by Syff](.github/assets/logo_with_background.png)
 
-# Minigolf Contributions
+# Deprecated Repository
 
-If you wish to report a bug, get help with a problem or give a suggestion: head over to the Issues tab of this repo and make yourself heard.
+This repository used to be useful when the minigolf gamemode was still private. That gamemode is now public and can be found [here](https://github.com/timothywalter/gmod-minigolf).
+
+I will begin adding debugging functions to the minigolf gamemode and moving the mapping guide there soon. __After that I'll remove this repo.__
 
 
 ## Dev Kit Addon
 
-This is not the whole Minigolf gamemode, but rather a minimal framework that mapper and other content developers can use to test their content. Unlike the Minigolf gamemode (which for now is closed-source), all custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
+This is not the whole Minigolf gamemode, but rather a minimal framework that mapper and other content developers can use to test their content. All custom code and content in this repository is licensed under the open-source MIT License (see [LICENSE](LICENSE) file for more information)
 
 
 ## Usage Instructions
